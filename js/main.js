@@ -56,7 +56,6 @@ songSource.addEventListener("timeupdate", () => {
   author.innerHTML = songs[index].author;
   songTrackScroll.style.width = 0;
   currentTime.innerHTML = formatToMinutes(0);
-  setTimeout(() => duration.innerHTML = formatToMinutes(songSource.duration), 500);
 };
 
 playButton.addEventListener("click", () => {
@@ -116,12 +115,13 @@ repeatButton.addEventListener("click", () => {
     repeatButton.classList.add("active");
   };
 });
-  
+
 
 function playMusic() {
   songSource.play();
   playButton.innerHTML = "<i class='fa fa-pause'></i>";
   songSource.classList.remove("paused");
+  setTimeout(() => duration.innerHTML = formatToMinutes(songSource.duration), 500);
 };
 
 function pauseMusic() {
