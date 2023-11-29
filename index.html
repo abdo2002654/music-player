@@ -9,6 +9,8 @@
 </head>
 <body>
 
+  <audio class="songSource paused">
+  </audio>
   <div class="playerContainer">
     <div class="playerHeader">
       <button> <i class="fa fa-bars-staggered"></i> </button>
@@ -38,25 +40,25 @@
       <p class="author"> juice wrld </p>
     </div>
     <div class="controlButtons">
-      <button class="repeat"><i class="fa fa-repeat"></i></button>
-      <button class="favourite"><i class="fa fa-heart"></i></button>
-      <button class="shuffle"><i class="fa fa-shuffle"></i></button>
+      <button class="repeatButton"><i class="fa fa-repeat"></i></button>
+      <button class="favouriteButton"><i class="fa fa-heart"></i></button>
+      <button class="shuffleButton"><i class="fa fa-shuffle"></i></button>
     </div>
     <div class="trackContainer">
       <div class="track">
         <div class="scroll">
-          <div class="pointer"></div>
+          <div class="pointer" draggable="true"></div>
         </div>
       </div>
     </div>
     <div class="timeTracker">
-      <div class="duration">0 : 50</div>
-      <div class="current">3 : 11</div>
+      <div class="currentTime">0 : 00</div>
+      <div class="duration">0 : 00</div>
     </div>
     <div class="buttons">
-      <button><i class="fa fa-angle-left"></i></button>
-      <button><i class="fa fa-play"></i></button>
-      <button><i class="fa fa-angle-right"></i></button>
+      <button class="prevButton"><i class="fa fa-angle-left"></i></button>
+      <button class="playButton"><i class="fa fa-play" style="margin-top: 4px;margin-left: 2px;"></i></button>
+      <button class="nextButton"><i class="fa fa-angle-right"></i></button>
     </div>
   </div>
 
