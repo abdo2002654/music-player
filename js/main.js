@@ -9,7 +9,7 @@ let songs = [
   {songName: "rich spirit", author: "kendrick lamar", source: "../assets/audios/Kendrick Lamar - Rich Spirit(MP3_320K).mp3"},
   {songName: "bye bye", author: "juice wrld & marshmello", source: "../assets/audios/Marshmello_ Juice WRLD - Bye Bye (Official Video)(MP3_320K).mp3"},
   {songName: "cruel summer", author: "taylor swift", source: "../assets/audios/Taylor Swift - Cruel Summer (Official Audio)(MP3_320K).mp3"},
-]
+];
 
 let favourite = [];
 let index = 0;
@@ -24,8 +24,8 @@ let shuffleButton = document.querySelector(".shuffleButton");
 
 let songName = document.querySelector("h4");
 let author = document.querySelector("p");
-let songTrack = document.querySelector(".track")
-let songTrackScroll = document.querySelector(".track .scroll")
+let songTrack = document.querySelector(".track");
+let songTrackScroll = document.querySelector(".track .scroll");
 let duration = document.querySelector(".duration");
 let currentTime = document.querySelector(".currentTime");
 
@@ -42,7 +42,7 @@ let repeat = false;
 
 window.addEventListener("load", () => {
   play();
-})
+});
 
 songSource.addEventListener("timeupdate", () => {
   currentTime.innerHTML = formatToMinutes(songSource.currentTime);
@@ -56,29 +56,29 @@ songSource.addEventListener("timeupdate", () => {
   songTrackScroll.style.width = 0;
   currentTime.innerHTML = formatToMinutes(0);
   setTimeout(() => duration.innerHTML = formatToMinutes(songSource.duration), 500);
-}
+};
 
 playButton.addEventListener("click", () => {
   if(songSource.classList.contains("paused")) {
     songSource.classList.remove("paused");
     playMusic();
   } else {
-    songSource.classList.add("paused")
+    songSource.classList.add("paused");
     pauseMusic();
   };
-})
+});
 nextButton.addEventListener("click", () => {
   if(shuffle){
     index = Math.floor(Math.random() * songs.length);
   } else if(repeat) {
     index = index;
   } else {
-    index = index==songs.length-1?0:index + 1
-  }
+    index = index==songs.length-1?0:index + 1;
+  };
   play();
   playMusic();
-  songSource.classList.remove("paused")
-})
+  songSource.classList.remove("paused");
+});
 prevButton.addEventListener("click", () => {
   if(shuffle){
     index = Math.floor(Math.random() * songs.length);
@@ -86,11 +86,11 @@ prevButton.addEventListener("click", () => {
     index = index;
   } else {
     index = index==0?songs.length - 1:index - 1;
-  }
+  };
   play();
   playMusic();
   songSource.classList.remove("paused")
-})
+});
 
 shuffleButton.addEventListener("click", () => {
   if(shuffle) {
@@ -101,8 +101,8 @@ shuffleButton.addEventListener("click", () => {
     repeat = false;
     repeatButton.classList.remove("active");
     shuffleButton.classList.add("active");
-  }
-})
+  };
+});
 
 repeatButton.addEventListener("click", () => {
   if(repeat) {
@@ -113,30 +113,30 @@ repeatButton.addEventListener("click", () => {
     shuffle = false;
     shuffleButton.classList.remove("active");
     repeatButton.classList.add("active");
-  }
-})
+  };
+});
   
 
 function playMusic() {
   songSource.play();
   playButton.innerHTML = "<i class='fa fa-pause'></i>";
   songSource.classList.remove("paused");
-}
+};
 
 function pauseMusic() {
   songSource.pause();
   playButton.innerHTML = '<i class="fa fa-play" style="margin-top: 4px;margin-left: 2px;"></i>';
   songSource.classList.add("paused");
-}
+};
 
 songTrack.addEventListener("click", (e) => {
   songSource.currentTime = (e.offsetX / songTrack.clientWidth) * songSource.duration;
-})
+});
 
 
 
 function formatToMinutes (time) {
   let before = Math.floor(time/60);
-  let after = (time%60>=10?"":"0")+Math.floor(time%60)
+  let after = (time%60>=10?"":"0")+Math.floor(time%60);
   return before + " : " + after;
-}
+};
