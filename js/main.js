@@ -153,7 +153,8 @@ function formatToMinutes (time) {
 };
 
 setInterval(() => {
-  if(songSource.duration == NaN) return;
-   duration.innerHTML = formatToMinutes(songSource.duration);
-   console.log(songSource.duration)
+  if(songSource.duration !== NaN) {
+    duration.innerHTML = formatToMinutes(songSource.duration);
+    console.log(songSource.duration)
+  }
 }, 500);;
