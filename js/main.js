@@ -155,6 +155,5 @@ function formatToMinutes (time) {
 setInterval(() => {
   if(songSource.duration > 0) {
     duration.innerHTML = formatToMinutes(songSource.duration);
-    console.log(songSource.duration > 0)
   }
-}, 500);;
+}, 500);
