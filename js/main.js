@@ -1,14 +1,14 @@
 let songs = [
-  {songName: "faded", author: "alan walker", source: "../assets/audios/Alan Walker - Faded(MP3_320K).mp3"},
-  {songName: "on my way", author: "sabrina carpenter", source: "../assets/audios/Alan Walker_ Sabrina Carpenter _ Farruko  - On My Way(MP3_320K).mp3"},
-  {songName: "for my hand", author: "burna boy & ed sheeran", source: "../assets/audios/Burna Boy - For My Hand (Lyrics) _ I wanna be in your life until the night is over(MP3_320K).mp3"},
-  {songName: "seven days", author: "craig david", source: "../assets/audios/Craig David - 7 Days (Official Video)(MP3_320K).mp3"},
-  {songName: "walking a way", author: "craig david", source: "../assets/audios/Craig David - Walking Away (Official Video)(MP3_160K).mp3"},
-  {songName: "fine china", author: "juice wrld & future", source: "../assets/audios/Fine China(MP3_320K).mp3"},
-  {songName: "come and go", author: "juice wrld & marshmello", source: "../assets/audios/Juice WRLD ft. Marshmello - Come _ Go (Official Audio)(MP3_320K).mp3"},
-  {songName: "rich spirit", author: "kendrick lamar", source: "../assets/audios/Kendrick Lamar - Rich Spirit(MP3_320K).mp3"},
-  {songName: "bye bye", author: "juice wrld & marshmello", source: "../assets/audios/Marshmello_ Juice WRLD - Bye Bye (Official Video)(MP3_320K).mp3"},
-  {songName: "cruel summer", author: "taylor swift", source: "../assets/audios/Taylor Swift - Cruel Summer (Official Audio)(MP3_320K).mp3"},
+  {songName: "faded", author: "alan walker", source: "./assets/audios/Alan Walker - Faded(MP3_320K).mp3"},
+  {songName: "on my way", author: "sabrina carpenter", source: "./assets/audios/Alan Walker_ Sabrina Carpenter _ Farruko  - On My Way(MP3_320K).mp3"},
+  {songName: "for my hand", author: "burna boy & ed sheeran", source: "./assets/audios/Burna Boy - For My Hand (Lyrics) _ I wanna be in your life until the night is over(MP3_320K).mp3"},
+  {songName: "seven days", author: "craig david", source: "./assets/audios/Craig David - 7 Days (Official Video)(MP3_320K).mp3"},
+  {songName: "walking a way", author: "craig david", source: "./assets/audios/Craig David - Walking Away (Official Video)(MP3_160K).mp3"},
+  {songName: "fine china", author: "juice wrld & future", source: "./assets/audios/Fine China(MP3_320K).mp3"},
+  {songName: "come and go", author: "juice wrld & marshmello", source: "./assets/audios/Juice WRLD ft. Marshmello - Come _ Go (Official Audio)(MP3_320K).mp3"},
+  {songName: "rich spirit", author: "kendrick lamar", source: "./assets/audios/Kendrick Lamar - Rich Spirit(MP3_320K).mp3"},
+  {songName: "bye bye", author: "juice wrld & marshmello", source: "./assets/audios/Marshmello_ Juice WRLD - Bye Bye (Official Video)(MP3_320K).mp3"},
+  {songName: "cruel summer", author: "taylor swift", source: "./assets/audios/Taylor Swift - Cruel Summer (Official Audio)(MP3_320K).mp3"},
 ];
 
 let favourite = [];
