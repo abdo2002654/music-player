@@ -41,6 +41,7 @@ let repeat = false;
 
 
 window.addEventListener("load", () => {
+  songSource.src = songs[0].source;
   play();
 });
 
@@ -107,7 +108,7 @@ shuffleButton.addEventListener("click", () => {
 repeatButton.addEventListener("click", () => {
   if(repeat) {
     repeat = false;
-    repeat.classList.remove("active");
+    repeatButton.classList.remove("active");
   } else {
     repeat = true;
     shuffle = false;
