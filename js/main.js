@@ -155,6 +155,6 @@ function formatToMinutes (time) {
 setInterval(() => {
   if(songSource.duration !== NaN) {
     duration.innerHTML = formatToMinutes(songSource.duration);
-    console.log(songSource.duration)
+    console.log(typeof songSource.duration)
   }
 }, 500);;
