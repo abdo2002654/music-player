@@ -14,6 +14,7 @@ let songs = [
 let favourite = [];
 let index = 0;
 
+let canPlay = true;
 let volumeButton = document.querySelector('.volumeButton');
 let volumeControls = document.querySelector(".volume");
 let volumeTrack = document.querySelector(".volumeTrack .scroll");
@@ -68,6 +69,8 @@ playButton.addEventListener("click", () => {
   };
 });
 nextButton.addEventListener("click", () => {
+  if(!canPlay) return;
+  canPlay = false;
   if(shuffle){
     index = Math.floor(Math.random() * songs.length);
   } else if(repeat) {
@@ -78,8 +81,13 @@ nextButton.addEventListener("click", () => {
   play();
   playMusic();
   songSource.classList.remove("paused");
+  setTimeout(() => {
+    canPlay = true;
+  }, 1000);
 });
 prevButton.addEventListener("click", () => {
+  if(!canPlay) return;
+  canPlay = false;
   if(shuffle){
     index = Math.floor(Math.random() * songs.length);
   } else if(repeat) {
@@ -90,6 +98,9 @@ prevButton.addEventListener("click", () => {
   play();
   playMusic();
   songSource.classList.remove("paused")
+  setTimeout(() => {
+    canPlay = true;
+  }, 1000);
 });
 
 shuffleButton.addEventListener("click", () => {
@@ -121,7 +132,6 @@ function playMusic() {
   songSource.play();
   playButton.innerHTML = "<i class='fa fa-pause'></i>";
   songSource.classList.remove("paused");
-  setTimeout(() => duration.innerHTML = formatToMinutes(songSource.duration), 500);
 };
 
 function pauseMusic() {
@@ -141,3 +151,9 @@ function formatToMinutes (time) {
   let after = (time%60>=10?"":"0")+Math.floor(time%60);
   return before + " : " + after;
 };
+
+setInterval(() => {
+  if(songSource.duration == NaN) return;
+   duration.innerHTML = formatToMinutes(songSource.duration);
+   console.log(songSource.duration)
+}, 500);;
