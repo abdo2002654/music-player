@@ -17,7 +17,10 @@ let index = 0;
 let canPlay = true;
 let volumeButton = document.querySelector('.volumeButton');
 let volumeControls = document.querySelector(".volume");
-let volumeTrack = document.querySelector(".volumeTrack .scroll");
+let volumeTrack = document.querySelector(".volumeTrack");
+let volumeTrackScroller = document.querySelector(".volumeTrack .scroll");
+let volumeMute = document.querySelector(".volume-off");
+let volume = 1;
 
 let repeatButton = document.querySelector(".repeatButton");
 let favouriteButton = document.querySelector(".favouriteButton");
@@ -157,3 +160,32 @@ setInterval(() => {
     duration.innerHTML = formatToMinutes(songSource.duration);
   }
 }, 500);
+
+
+volumeButton.addEventListener("click", () => {
+  if(volumeControls.classList.contains("active")) {
+    volumeControls.classList.remove("active")
+    volumeButton.innerHTML = "<i class='fa fa-volume-high'></i>";
+  } else {
+    volumeButton.innerHTML = "<i class='fa fa-close'></i>";
+    volumeControls.classList.add("active")
+  }
+})
+
+volumeTrack.addEventListener("click", (e) => {
+  songSource.volume = e.offsetX/volumeTrack.clientWidth;
+  volume = e.offsetX/volumeTrack.clientWidth;
+  volumeTrackScroller.style.width = (songSource.volume) * 100+"%";
+})
+
+volumeMute.addEventListener("click", () => {
+  if(songSource.volume > 0) {
+    songSource.volume = 0;
+    volumeTrackScroller.style.width = (songSource.volume) * 100+"%";
+  } else {
+    songSource.volume = volume;
+    volumeTrackScroller.style.width = (songSource.volume) * 100+"%";
+  }
+})
+
+volumeTrackScroller.style.width = (songSource.volume) * 100+"%";
