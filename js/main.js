@@ -33,11 +33,13 @@ let tabPanels = document.querySelectorAll(".tab-panel");
 let allList = document.querySelector(".allList");
 let favList = document.querySelector(".favList");
 let allListItems = document.querySelectorAll(".allList li");
+let ListCloseButton = document.querySelector(".listHeader button");
 
 let songName = document.querySelector("h4");
 let author = document.querySelector("p");
 let songTrack = document.querySelector(".track");
 let songTrackScroll = document.querySelector(".track .scroll");
+let songTrackScrollPointer = document.querySelector(".track .scroll div");
 let duration = document.querySelector(".duration");
 let currentTime = document.querySelector(".currentTime");
 
@@ -285,3 +287,9 @@ function updateList () {
       favList.append(favli)}
   })
 }
+
+songTrackScrollPointer.onclick = (e) => {
+  e.stopPropagation();
+}
+
+ListCloseButton.addEventListener("click", () => ListsContainer.classList.remove("on"));
