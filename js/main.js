@@ -11,7 +11,7 @@ let songs = [
   {songName: "cruel summer", author: "taylor swift", source: "./assets/audios/Taylor Swift - Cruel Summer (Official Audio)(MP3_320K).mp3"},
 ];
 
-let favourite = [];
+let favourite = ["faded", "walking a way"];
 let index = 0;
 
 let canPlay = true;
@@ -25,6 +25,14 @@ let volume = 1;
 let repeatButton = document.querySelector(".repeatButton");
 let favouriteButton = document.querySelector(".favouriteButton");
 let shuffleButton = document.querySelector(".shuffleButton");
+
+let ListsContainer = document.querySelector(".playerListContainer");
+let listToggler = document.querySelector(".listToggler");
+let tabs = document.querySelectorAll(".tab");
+let tabPanels = document.querySelectorAll(".tab-panel");
+let allList = document.querySelector(".allList");
+let favList = document.querySelector(".favList");
+let allListItems = document.querySelectorAll(".allList li");
 
 let songName = document.querySelector("h4");
 let author = document.querySelector("p");
@@ -42,11 +50,23 @@ let songSource = document.querySelector(".songSource");
 let shuffle = false;
 let repeat = false;
 
+favouriteButton.addEventListener("click",  () => {
+  if(favouriteButton.classList.contains("active")) {
+    favouriteButton.classList.remove("active");
+    favourite = favourite.filter(e => e !== songs[index].songName)
+    updateList();
+  } else {
+    favouriteButton.classList.add("active");
+    favourite.push(songs[index].songName);
+    updateList();
+  }
 
+})
 
 window.addEventListener("load", () => {
   songSource.src = songs[0].source;
   play();
+  updateList();
 });
 
 songSource.addEventListener("timeupdate", () => {
@@ -60,6 +80,13 @@ songSource.addEventListener("timeupdate", () => {
   author.innerHTML = songs[index].author;
   songTrackScroll.style.width = 0;
   currentTime.innerHTML = formatToMinutes(0);
+  let fav = false;
+  favourite.forEach(e => {
+    if(e === songs[index].songName) fav = true;
+  })
+
+  if(fav) favouriteButton.classList.add('active');
+  if(!fav) favouriteButton.classList.remove('active');
 };
 
 playButton.addEventListener("click", () => {
@@ -161,6 +188,19 @@ setInterval(() => {
   }
 }, 500);
 
+tabs.forEach((e, i) => {
+  e.addEventListener("click", () => {
+    tabs.forEach(ele => ele.classList.remove("active"));
+    tabPanels.forEach((ele, index) => {
+      if(index == i) {
+        ele.classList.add("active");
+      } else {
+        ele.classList.remove("active");
+      }
+    })
+    e.classList.add("active");
+  });
+});
 
 volumeButton.addEventListener("click", () => {
   if(volumeControls.classList.contains("active")) {
@@ -189,3 +229,59 @@ volumeMute.addEventListener("click", () => {
 })
 
 volumeTrackScroller.style.width = (songSource.volume) * 100+"%";
+
+listToggler.addEventListener("click", () => {
+  ListsContainer.classList.add("on")
+})
+function updateList () {
+  allList.innerHTML = ``;
+  favList.innerHTML = ``;
+  songs.forEach((song, id) => {
+    let favourited = false;
+    favourite.forEach(e => {
+      if(e === song.songName) favourited = true;
+    })
+    let li = document.createElement("li");
+    li.innerHTML += `
+      <div class="icon">
+        <i class="fa fa-music"></i>
+      </div>
+      <div class="song">
+        <h5>${song.songName}</h5>
+        <p>${song.author}</p>
+      </div>
+      <div class="fav-icon ${favourited?"fav":""}">
+        <i class="fa fa-heart"></i>
+      </div>
+    `
+    li.addEventListener("click", () => {
+      index = id;
+      play();
+      playMusic();
+      ListsContainer.classList.remove("on");
+    })
+    allList.append(li)
+
+    if(favourited) {
+      let favli = document.createElement("li");
+      favli.innerHTML += `
+      <div class="icon">
+      <i class="fa fa-music"></i>
+      </div>
+      <div class="song">
+      <h5>${song.songName}</h5>
+      <p>${song.author}</p>
+      </div>
+      <div class="fav-icon fav">
+      <i class="fa fa-heart"></i>
+      </div>
+      `
+      favli.addEventListener("click", () => {
+        index = id;
+        play();
+        playMusic();
+        ListsContainer.classList.remove("on");
+      })
+      favList.append(favli)}
+  })
+}

@@ -1,3 +1,13 @@
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #fff1;
+}
+::-webkit-scrollbar-thumb {
+  background: #fff6;
+  border-radius: 10px;
+}
 * {
   margin: 0;
   box-sizing: border-box;
@@ -24,6 +34,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 .playerHeader {
   display: flex;
@@ -258,4 +269,127 @@ canvas {
   100% {
     transform: scale(1);
   }
+}
+.playerListContainer {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: -120%;
+  left: 0;
+  background: #222222;
+  z-index: 200;
+  transition: .5s;
+}
+.playerListContainer.on {
+  top: 0%;
+  display: flex;
+  flex-direction: column;
+}
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  margin-bottom: 20px;
+}
+.tab {
+  flex: 1;
+  text-align: center;
+  border-bottom: 3px solid #555;
+  padding: 15px;
+  font-family: roboto;
+  color: white;
+  font-weight: 100;
+  cursor: pointer;
+  background: #fff1;
+  transition: .5s;
+}
+.tab.active {
+  color: rgb(255, 77, 77);
+  font-weight: 900;
+  border-color: rgb(255, 77, 77);
+}
+.tabs-panels {
+  flex: 1;
+  display: flex;
+}
+.tab-panel {
+  display: flex;
+  flex: 1;
+}
+.tab-panel:nth-child(1) {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: -100%;
+  transition: .5s;
+}
+.tab-panel:nth-child(2) {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  right: -100%;
+  transition: .5s;
+}
+.tab-panel:nth-child(1).active { left: 0; }
+.tab-panel:nth-child(2).active { right: 0; }
+
+.favList  ,
+.allList {
+  list-style: none;
+  display: flex;
+  flex: 1;
+  padding: 5px;
+  flex-direction: column;
+  gap: 5px;
+  overflow-y: scroll;
+}
+ li{
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background: #333;
+  cursor: pointer;
+  transition: .5s;
+}
+ li:hover{
+  background: #464646;
+}
+ li .icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  background: #eee;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+}
+ li .song{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0px 10px;
+  color: #eee;
+  border-radius: 50px;
+}
+ li .song h5{
+  font-size: 14px;
+  font-family: roboto;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+ li .song p{
+  font-size: 12px;
+  font-family: roboto;
+  font-weight: 600;
+  color: #a8a8a8;
+}
+.fav-icon {
+  color: #777;
+  margin-left: auto;
+}
+.fav-icon.fav {
+  color: rgb(255, 97, 97);
+  margin-left: auto;
 }
