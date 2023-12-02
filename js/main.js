@@ -15,6 +15,7 @@ let favourite = ["faded", "walking a way"];
 let index = 0;
 
 let canPlay = true;
+let switcher = document.querySelector(".switch");
 let volumeButton = document.querySelector('.volumeButton');
 let volumeControls = document.querySelector(".volume");
 let volumeTrack = document.querySelector(".volumeTrack");
@@ -293,3 +294,14 @@ songTrackScrollPointer.onclick = (e) => {
 }
 
 ListCloseButton.addEventListener("click", () => ListsContainer.classList.remove("on"));
+switcher.addEventListener("click", () => {
+  if(document.body.classList.contains("dark")) {
+    document.body.classList.add("light");
+    document.body.classList.remove("dark");
+    switcher.innerHTML = "<i class='fa fa-moon'></i>";
+  } else if (document.body.classList.contains("light")) {
+    document.body.classList.add("dark");
+    document.body.classList.remove("light");
+    switcher.innerHTML = "<i class='fa fa-sun'></i>";
+  }
+})

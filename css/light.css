@@ -1,3 +1,160 @@
 body.light {
+  transition: .5s;
   background: #eee;
+}
+
+body.light .playerContainer {
+  transition: .5s;
+  box-shadow: 0px 0px 10px 0px #999;
+  background: #cccccc50;
+}
+
+body.light .playerHeader button {
+  transition: .5s;
+  color: #333;
+}
+
+body.light .volume {
+  transition: .5s;
+  border: 3px solid #eee;
+  box-shadow: 0px 0px 5px 0px #999;
+  color: #333;
+}
+
+body.light .soundControls .volumeTrack {
+  transition: .5s;
+  background: rgb(65, 65, 65);
+}
+
+body.light .playerHeader button:nth-child(1):hover {
+  transition: .5s;
+  border: 3px solid #eee;
+  box-shadow: 0px 0px 5px 0px #999;
+}
+
+body.light .musicIcon {
+  transition: .5s;
+  border: 1px solid #eee;
+  box-shadow: 0px 0px 10px 0px #999;
+}
+body.light .musicIcon .icon {
+  transition: .5s;
+  color: #eee;
+  background: #eee6;
+  box-shadow: 0px 0px 30px 1px #444 inset;
+}
+
+body.light .songData h4 {
+  transition: .5s;
+  color: #333;
+}
+body.light .songData p {
+  transition: .5s;
+  color: #5a5a5a;
+}
+body.light .controlButtons button:nth-child(1),
+body.light .controlButtons button:nth-child(3) {
+  transition: .5s;
+  border: 1px solid #3335;
+  color: #333;
+}
+body.light .controlButtons button:nth-child(1).active,
+body.light .controlButtons button:nth-child(3).active {
+  transition: .5s;
+  background: #333;
+  color: #eee ;
+}
+body.light .controlButtons button:nth-child(2) {
+  transition: .5s;
+  color: #747474;
+}
+body.light .controlButtons button:nth-child(2).active {
+  transition: .5s;
+  color: rgb(184, 55, 55);
+}
+body.light .track {
+  transition: .5s;
+  background: #525252;
+}
+body.light .scroll {
+  transition: .5s;
+  background: rgb(75, 75, 255);
+}
+body.light .scroll .pointer {
+  transition: .5s;
+  background: rgb(255, 255, 255);
+  box-shadow: 0px 0px 4px 0px #111;
+}
+body.light .timeTracker {
+  transition: .5s;
+  color: #333;
+}
+body.light .buttons button {
+  transition: .5s;
+  color: #333;
+  box-shadow: 1px 1px 5px 0px #333;
+}
+body.light .buttons button:hover {
+  transition: .5s;
+  box-shadow: 0px 0px 5px 0px #444;
+}
+body.light .playerListContainer {
+  transition: .5s;
+  background: #eee;
+}
+
+body.light .listHeader h3 {
+  transition: .5s;
+  color: #444;
+}
+body.light .listHeader button {
+  transition: .5s;
+  color: #444;
+}
+body.light .tab {
+  transition: .5s;
+  border-bottom: 2px solid #555;
+  color: #222; 
+}
+body.light .tab.active {
+  transition: .5s;
+  color: rgb(255, 77, 77);
+  border-color: rgb(255, 77, 77);
+}
+body.light li{
+  transition: .5s;
+  background: linear-gradient(45deg, #ddd, #afafaf);
+  box-shadow: 0 0 5px #fff;
+}
+body.light li:hover{
+  transition: .5s;
+  background: linear-gradient(45deg, #ddd, #999999);
+}
+body.light li .icon{
+  transition: .5s;
+  color: #eee;
+  box-shadow: 1px 1px 14px 0 #eee;
+  border: 1px solid #eee;
+  background: linear-gradient(45deg, #333, #666);
+}
+body.light li .song{
+  transition: .5s;
+  color: #333;
+}
+body.light li .song p{
+  transition: .5s;
+  color: #696969;
+}
+body.light .fav-icon {
+  transition: .5s;
+  color: #696969;
+}
+body.light .fav-icon.fav {
+  transition: .5s;
+  color: rgb(182, 66, 66);
+}
+body.light .switch {
+  transition: .5s;
+  color: rgb(201, 201, 201);
+  background: rgb(75, 75, 75);
 }

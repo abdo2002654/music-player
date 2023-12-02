@@ -2,10 +2,10 @@
   width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #fff1;
+  background: #fff;
 }
 ::-webkit-scrollbar-thumb {
-  background: #fff6;
+  background: #333;
   border-radius: 10px;
 }
 * {
@@ -348,4 +348,17 @@ canvas {
 }
 .fav-icon.fav {
   margin-left: auto;
+}
+.switch {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 50%;
 }
