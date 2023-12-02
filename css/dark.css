@@ -1,0 +1,123 @@
+body.dark {
+  background: #333;
+}
+
+body.dark .playerContainer {
+  box-shadow: 0px 0px 10px 0px #444;
+  background: #22222250;
+}
+
+body.dark .playerHeader button {
+  color: #eee;
+}
+
+body.dark .volume {
+  border: 3px solid #333;
+  box-shadow: 0px 0px 5px 0px #444;
+  color: #eee;
+}
+
+body.dark .soundControls .volumeTrack {
+  background: rgb(199, 199, 199);
+}
+
+body.dark .playerHeader button:nth-child(1):hover {
+  border: 3px solid #333;
+  box-shadow: 0px 0px 5px 0px #444;
+}
+
+body.dark .musicIcon {
+  border: 1px solid #333;
+  box-shadow: 0px 0px 10px 0px #444;
+}
+body.dark .musicIcon .icon {
+  color: #eee;
+  background: #3339;
+  box-shadow: 0px 0px 30px 15px #444 inset;
+}
+
+body.dark .songData h4 {
+  color: #c4c4c4;
+}
+body.dark .songData p {
+  color: #797979;
+}
+body.dark .controlButtons button:nth-child(1),
+body.dark .controlButtons button:nth-child(3) {
+  border: 1px solid #eee5;
+  color: #eee;
+}
+body.dark .controlButtons button:nth-child(1).active,
+body.dark .controlButtons button:nth-child(3).active {
+  background: #949494;
+  color: #333;
+}
+body.dark .controlButtons button:nth-child(2) {
+  color: #adadad;
+}
+body.dark .controlButtons button:nth-child(2).active {
+  color: rgb(255, 77, 77);
+}
+body.dark .track {
+  background: #a1a1a1;
+}
+body.dark .scroll {
+  background: rgb(75, 75, 255);
+}
+body.dark .scroll .pointer {
+  background: rgb(255, 255, 255);
+  box-shadow: 0px 0px 4px 0px #111;
+}
+body.dark .timeTracker {
+  color: #eee;
+}
+body.dark .buttons button {
+  color: #eee;
+  border: 3px solid #333;
+}
+body.dark .buttons button:hover {
+  box-shadow: 0px 0px 5px 0px #444;
+}
+body.dark .playerListContainer {
+  background: #222222;
+}
+
+body.dark .listHeader h3 {
+  color: #ddd;
+}
+body.dark .listHeader button {
+  color: #ddd;
+}
+body.dark .tab {
+  border-bottom: 2px solid #555;
+  color: white;
+}
+body.dark .tab.active {
+  color: rgb(255, 77, 77);
+  border-color: rgb(255, 77, 77);
+}
+body.dark li{
+  background: linear-gradient(45deg, #333, #666);
+  box-shadow: 0 0 5px #000;
+}
+body.dark li:hover{
+  background: linear-gradient(45deg, #222, #555);
+}
+body.dark li .icon{
+  color: #333;
+  box-shadow: 1px 1px 14px 0 #222;
+  border: 1px solid #333;
+  background: linear-gradient(45deg, #fff, #888);
+}
+body.dark li .song{
+  color: #eee;
+}
+body.dark li .song p{
+  color: #a8a8a8;
+}
+body.dark .fav-icon {
+  color: #ddd;
+}
+body.dark .fav-icon.fav {
+  color: rgb(255, 97, 97);
+}
